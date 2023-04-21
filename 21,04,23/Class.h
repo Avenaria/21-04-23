@@ -4,31 +4,31 @@
 #include<Windows.h>
 using namespace std;
 
-class man
+class man// класс человека
 {
 	int age;
 	char* name;
 	char* suname;
 public:
-	man(char* n, char* s, int a) :name{ new char[strlen(n) + 1] },
+	man(char* n, char* s, int a) :name{ new char[strlen(n) + 1] },// конструктор 
 		suname{ new char[strlen(s) + 1] },
 		age{ a } {
 		strcpy_s(name, strlen(n) + 1, n);
 		strcpy_s(suname, strlen(s) + 1, s);
 
 	};
-	man();
-	~man();
-	void Put() {
-		char temp[1024];
+	man();// конструктор по умолчанию
+	~man();// дестртуктор 
+	void Put() {// вносим изменения 
+		char temp[1024];// временный массив 
 		cout << "веедите имя ";
-		cin >> temp;
-		if (name) delete[]name;
-		name = new char[strlen(temp) + 1];
-		strcpy_s(name, strlen(temp) + 1, temp);
+		cin >> temp;// заполняем данные 
+		if (name) delete[]name;// если имя есть, удаляем
+		name = new char[strlen(temp) + 1];// выделяем необходимое количество памяти 
+		strcpy_s(name, strlen(temp) + 1, temp);// копируем 
 
 
-		char temp[1024];
+		char temp[1024];// фамилия 
 		cout << "веедите F ";
 		cin >> temp;
 		if (suname) delete[]name;
